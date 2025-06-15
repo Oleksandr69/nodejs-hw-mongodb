@@ -3,9 +3,11 @@ const updateContactsSchema = new Schema(
   {
     name: {
       type: String,
+      required: false,
     },
     phoneNumber: {
       type: String,
+      required: false,
     },
     email: {
       type: String,
@@ -16,6 +18,7 @@ const updateContactsSchema = new Schema(
     },
     contactType: {
       type: String,
+      required: false,
       enum: ['work', 'home', 'personal'],
       default: 'personal',
     },
