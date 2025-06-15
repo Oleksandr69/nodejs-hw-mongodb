@@ -28,4 +28,4 @@ const updateContactsSchema = new Schema(
     versionKey: false,
   },
 );
-export const UpdateContactsCollection = model('contacts', updateContactsSchema);
+export const UpdateContactsCollection = model('contact', updateContactsSchema);
