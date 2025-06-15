@@ -30,7 +30,35 @@ const contactsSchema = new Schema(
   },
 );
 
+const updateContactsSchema = new Schema(
+  {
+    name: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
+    email: {
+      type: String,
+    },
+    isFavourite: {
+      type: Boolean,
+      default: false,
+    },
+    contactType: {
+      type: String,
+      enum: ['work', 'home', 'personal'],
+      default: 'personal',
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  },
+);
+
 export const ContactsCollection = model('contacts', contactsSchema);
+export const UpdateContactsCollection = model('contacts', updateContactsSchema);
 
 // name - string, required
 // phoneNumber - string, required
