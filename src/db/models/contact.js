@@ -31,9 +31,3 @@ const contactsSchema = new Schema(
 );
 
 export const ContactsCollection = model('contacts', contactsSchema);
-
-// name - string, required
-// phoneNumber - string, required
-// email - string
-// isFavourite - boolean, default false
-// contactType - string, enum(’work’, ‘home’, ‘personal’), required, default ‘personal’
