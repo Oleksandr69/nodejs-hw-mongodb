@@ -52,11 +52,11 @@ export const getAllContacts = async ({
 };
 
 export const getContactById = async (contactId, isUserId) => {
-  const contactsQuery = ContactsCollection.findById(contactId);
+  const contactsQuery = ContactsCollection.findOne(contactId, isUserId);
   if (isUserId) {
     contactsQuery.where('userId').equals(isUserId);
   }
-  const contact = await ContactsCollection.findById(contactId);
+  const contact = await ContactsCollection.findOne(contactId, isUserId);
   return contact;
 };
 
@@ -66,12 +66,16 @@ export const createContact = async (payload) => {
 };
 
 export const deleteContact = async (contactId, isUserId) => {
-  const contactsQuery = ContactsCollection.findById(contactId);
+  const contactsQuery = ContactsCollection.findOneAndDelete(
+    contactId,
+    isUserId,
+  );
   if (isUserId) {
     contactsQuery.where('userId').equals(isUserId);
   }
   const contact = await ContactsCollection.findOneAndDelete({
     _id: contactId,
+    userId: isUserId,
   });
 
   return contact;
@@ -83,12 +87,15 @@ export const updateContact = async (
   payload,
   options = {},
 ) => {
-  const contactsQuery = ContactsCollection.findById(contactId);
+  const contactsQuery = ContactsCollection.findOneAndUpdate(
+    contactId,
+    isUserId,
+  );
   if (isUserId) {
     contactsQuery.where('userId').equals(isUserId);
   }
   const rawResult = await UpdateContactsCollection.findOneAndUpdate(
-    { _id: contactId },
+    { _id: contactId, userId: isUserId },
     payload,
     {
       new: true,
