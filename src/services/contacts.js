@@ -56,7 +56,10 @@ export const getContactById = async (contactId, isUserId) => {
   if (isUserId) {
     contactsQuery.where('userId').equals(isUserId);
   }
-  const contact = await ContactsCollection.findOne(contactId, isUserId);
+  const contact = await ContactsCollection.findOne({
+    _id: contactId,
+    userId: isUserId,
+  });
   return contact;
 };
 
