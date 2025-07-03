@@ -44,15 +44,8 @@ export const loginUser = async (payload) => {
 
   await SessionsCollection.deleteOne({ userId: user._id });
 
-  // const accessToken = randomBytes(30).toString('base64');
-  // const refreshToken = randomBytes(30).toString('base64');
-
   return await SessionsCollection.create({
     userId: user._id,
-    // accessToken,
-    // refreshToken,
-    // accessTokenValidUntil: new Date(Date.now() + FIFTEEN_MINUTES),
-    // refreshTokenValidUntil: new Date(Date.now() + THIRTY_DAYS),
     ...newSession,
   });
 };
@@ -86,4 +79,13 @@ export const refreshUsersSession = async ({ sessionId, refreshToken }) => {
     userId: session.userId,
     ...newSession,
   });
+};
+
+export const requestResetToken = async (email) => {
+  const user = await UsersCollection.findOne({ email });
+  if (!user) {
+    throw createHttpError(404, 'User not found');
+  }
+
+  //доповнимо її трохи пізніше
 };
