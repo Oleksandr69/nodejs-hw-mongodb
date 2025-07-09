@@ -41,4 +41,5 @@ export const updateContactSchema = Joi.object({
     }
     return value;
   }),
+  photo: Joi.string(),
 });
