@@ -21,7 +21,9 @@ export const createContactSchema = Joi.object({
     }
     return true;
   }),
+  photo: Joi.string(),
 });
+
 export const updateContactSchema = Joi.object({
   name: Joi.string().min(3).max(20).messages({
     'string.base': 'Username should be a string',
