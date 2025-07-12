@@ -13,7 +13,7 @@ import {
   refreshUserSessionController,
   requestResetEmailController,
   resetPasswordController,
-  getGoogleOAuthUrlController,
+  // getGoogleOAuthUrlController,
 } from '../controllers/auth.js';
 import { validateBody } from '../middlewares/validateBody.js';
 
@@ -47,6 +47,6 @@ router.post(
   ctrlWrapper(resetPasswordController),
 );
 
-router.get('/get-oauth-url', ctrlWrapper(getGoogleOAuthUrlController));
+// router.get('/get-oauth-url', ctrlWrapper(getGoogleOAuthUrlController));
 
 export default router;
