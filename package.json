@@ -5,6 +5,9 @@
   "description": "",
   "type": "module",
   "scripts": {
+    "build": "npm run build-docs",
+    "build-docs": "redocly bundle docs/openapi.yaml --ext json -o docs/swagger.json",
+    "preview-docs": "redocly preview-docs",
     "dev": "nodemon src/index.js",
     "lint": "eslint src/**/*.js",
     "start": "node ./src/index.js"

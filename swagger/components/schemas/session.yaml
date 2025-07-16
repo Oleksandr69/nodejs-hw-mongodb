@@ -1,0 +1,28 @@
+type: object
+required:
+  - userId
+  - accessToken
+  - refreshToken
+  - accessTokenValidUntil
+  - refreshTokenValidUntil
+properties:
+  userId:
+    description: "User's id"
+    type: string
+    example: 65e4decdd286b30065d54af9
+  accessToken:
+    description: 'access token'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  prefreshToken:
+    description: 'refresh token'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  accessTokenValidUntil:
+    description: 'access token is valid until'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  refreshTokenValidUntil:
+    description: 'refresh token is valid until'
+    type: string
+    example: 65e4decdd286b30065d54af9
