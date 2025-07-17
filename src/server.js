@@ -36,11 +36,11 @@ export const setupServer = () => {
 
   app.use(errorHandler);
 
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-
   app.use('/uploads', express.static(UPLOAD_DIR));
 
   app.use('/api-docs', swaggerDocs());
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 };
