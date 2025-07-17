@@ -6,18 +6,11 @@ description: 'Get list of contacts with this endpoint'
 security:
   - bearerAuth: []
 parameters:
-  # page,
-  # perPage,
-  # sortBy,
-  # sortOrder,
-  # isFavourite,
-  # contactType,
-  # isUserId,
   - in: query
     name: page
     schema:
       type: integer
-      example: 1
+    example: 1
   - in: query
     name: perPage
     schema:
@@ -27,7 +20,7 @@ parameters:
     name: sortBy
     schema:
       type: string
-      example: 'isFavourite'
+      example: 'age'
     description: "All contact's fields can be mentioned. Default value - _id"
   - in: query
     name: sortOrder
@@ -36,21 +29,21 @@ parameters:
       enum: ['asc', 'desc']
       example: 'asc'
   - in: query
-    name: contactType
-    schema:
-      type: string
-      enum: ['work', 'home', 'personal']
-      example: 'personal'
-  - in: query
     name: isFavourite
     schema:
       type: boolean
       example: true
   - in: query
+    name: contactType
+    schema:
+      type: string
+      enum: ['work', 'home', 'personal']
+      example: male
+  - in: query
     name: isUserId
     schema:
       type: string
-      example: '65ca67e7ae7f10c88b598384'
+      example: 65ca67e7ae7f10c88b598384
 responses:
   '200':
     description: Successfully found contacts!
