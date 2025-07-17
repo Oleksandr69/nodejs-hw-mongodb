@@ -34,7 +34,7 @@
           "Contacts"
         ],
         "summary": "Get list of contacts",
-        "operationId": "getContacts",
+        "operationId": "getAllContacts",
         "description": "Get list of contacts with this endpoint",
         "security": [
           {
