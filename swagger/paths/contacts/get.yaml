@@ -20,6 +20,7 @@ parameters:
     name: sortBy
     schema:
       type: string
+      enum: ['name', 'isFavourite', 'contactType', 'email', 'phoneNumber']
       example: 'contactType'
     description: "All contact's fields can be mentioned. Default value - _id"
   - in: query
@@ -39,11 +40,6 @@ parameters:
       type: string
       enum: ['work', 'home', 'personal']
       example: personal
-  - in: query
-    name: isUserId
-    schema:
-      type: string
-      example: 65ca67e7ae7f10c88b598384
 responses:
   '200':
     description: Successfully found contacts!
