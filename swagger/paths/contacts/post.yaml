@@ -21,7 +21,7 @@ requestBody:
             example: 'John Doe'
           phoneNumber:
             description: "Contact's phone"
-            type: number
+            type: string
             example: +380000000001
           contactType:
             description: "Contact's type"
