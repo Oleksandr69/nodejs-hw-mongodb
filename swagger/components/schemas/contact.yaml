@@ -16,7 +16,7 @@ properties:
     example: 'John Doe'
   phoneNumber:
     description: "Contact's phone"
-    type: number
+    type: string
     example: +380000000001
   contactType:
     description: "Contact's type"
@@ -30,10 +30,10 @@ properties:
     description: 'Is the contact a favorite'
     type: boolean
     example: false
-  userId:
-    description: "Contact's user id"
-    type: string
-    example: 65e4decdd286b30065d54af9
+  # userId:
+  #   description: "Contact's user id"
+  #   type: string
+  #   example: 65e4decdd286b30065d54af9
   photo:
     description: "Link to contact's photo"
     type: string
